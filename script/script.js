@@ -1,20 +1,23 @@
 
 $(document).ready(function(){
-    listarDetalleGrupo();
+    listarNuevoGrupo();
+    $('#cbx_grupo').load('./procesos/mostrarComboCurso.php');
 });
-
-
 
 function listarNuevoGrupo() {
   //mostrar detalle horas grupo
   $('#cbx_grupo').change(function()
   {
+    $('#ultimoGrupo').val("");
+    $('#nuevoGrupo').val("");
     var grupo = $(this).val();
-    $.post( './procesos/login/mostrar_horas.php', { idGrupo: grupo} ).done(function(respuesta)
+
+    $.post( './procesos/mostrarUltimoGrupo.php', { idGrupo: grupo}
+          ).done(function(respuesta)
     {
       datos=jQuery.parseJSON(respuesta);
-          $('#horaEntrada').val(datos['hEntrada']);
-          $('#horaSalida').val( datos['hSalida'] );
+          $('#ultimoGrupo').val(datos['ultimoGrupo']);
+          $('#nuevoGrupo').val( datos['nuevoGrupo'] );
     });
   });
 }

@@ -10,7 +10,9 @@ require_once 'conexion.php';
 
     public function  mostrarGrupo(){
       $conexion =  $this->conexion();
-
+      $consultaCurso = "SELECT id_curso, nombre_curso FROM curso";
+      $exeConsultaCurso = mysqli_query($conexion,$consultaCurso);
+      return $exeConsultaCurso;
     }
 
     public function mostrarNuevoGrupo($idCurso){
@@ -71,7 +73,7 @@ require_once 'conexion.php';
 
 }
 
-$obj = new ClsDatos();
-echo json_encode( $obj->mostrarNuevoGrupo(125));
+// $obj = new ClsDatos();
+// echo json_encode( $obj->mostrarNuevoGrupo(125));
 
  ?>

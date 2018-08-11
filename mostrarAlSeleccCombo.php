@@ -9,10 +9,16 @@
   <body>
 
     <form class="" action="index.html" method="post">
-        <select class="" name="">
+        <select class="" name="cbx_grupo"  id="cbx_grupo">
 
         </select>
     </form>
+
+
+
+    <hr>
+    <input type="text" name="" value="" id="ultimoGrupo">
+      <input type="text" name="" value="" id="nuevoGrupo">
 
   </body>
 </html>
