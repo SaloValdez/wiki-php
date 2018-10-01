@@ -1,8 +1,8 @@
 <?php
 
 
-$var1  = '08:20:00';
-$var2  = '13:59:00';
+$var1  = '08:00:00';
+$var2  = '08:13:00';
 
 function RestarHoras($horaini,$horafin)
 {
